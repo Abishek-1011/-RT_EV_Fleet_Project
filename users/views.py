@@ -108,7 +108,8 @@ def vehicle_status(request):
         'labels': ['Inactive', 'Active'],  # Assume 0 -> 'Inactive' and 1 -> 'Active'
         'values': [status_counts.get(0, 0), status_counts.get(1, 0)]  # Default to 0 if not found
     }
-
+     # Pass the data to the template
+    return render(request, 'users/vehicle_status.html', {'data': data})
 from django.shortcuts import redirect
 def relationship_view(request):
     # Replace with the correct address for Streamlit
